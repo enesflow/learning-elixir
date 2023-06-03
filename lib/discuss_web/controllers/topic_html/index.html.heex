@@ -1,0 +1,23 @@
+<.header>
+  Listing Topics
+  <:actions>
+    <.link href={~p"/topics/new"}>
+      <.button>New Topic</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="topics" rows={@topics} row_click={&JS.navigate(~p"/topics/#{&1}")}>
+  <:col :let={topic} label="Title"><%= topic.title %></:col>
+  <:action :let={topic}>
+    <div class="sr-only">
+      <.link navigate={~p"/topics/#{topic}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/topics/#{topic}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={topic}>
+    <.link href={~p"/topics/#{topic}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
