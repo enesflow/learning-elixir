@@ -3,3 +3,7 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+* {
+	transition: all 0.15s ease;
+}

@@ -3,7 +3,10 @@
   <:subtitle>This is a topic record from your database.</:subtitle>
   <:actions>
     <.link href={~p"/topics/#{@topic}/edit"}>
-      <.button>Edit topic</.button>
+      <.phxbutton>Edit topic</.phxbutton>
+    </.link>
+    <.link href={~p"/topics/#{@topic}"} method="delete" data-confirm="Are you sure?">
+      <.phxbutton>Delete topic</.phxbutton>
     </.link>
   </:actions>
 </.header>
@@ -11,5 +14,4 @@
 <.list>
   <:item title="Title"><%= @topic.title %></:item>
 </.list>
-
-<.back navigate={~p"/topics"}>Back to topics</.back>
+<.phxback navigate={~p"/topics"}>Back to topics</.phxback>

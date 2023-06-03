@@ -87,6 +87,8 @@ defmodule DiscussWeb do
       import DiscussWeb.CoreComponents
       import DiscussWeb.Gettext
 
+      import DiscussWeb.PhxComponents
+
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
 
