@@ -12,9 +12,9 @@ module.exports = {
 			colors: {
 				brand: "#cb084a",
 				phx: {
-					1: "#FFBC0A",
-					2: "#E71D36",
-					3: "#C200FB",
+					1: "#FBFF12",
+					2: "#FF206E",
+					3: "#41EAD4",
 				},
 			},
 		},

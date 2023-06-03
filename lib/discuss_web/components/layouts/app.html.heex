@@ -6,24 +6,26 @@
         <img
           src="https://avatars.githubusercontent.com/u/65719051?v=4"
           width="36"
-          class="rounded-xl"
+          class="rounded-xl hover:scale-110 transition-all duration-400 ease-in-out"
         />
       </a>
-      <a
-        href="https://hexdocs.pm/phoenix/1.7.3/overview.html"
-        target="_blank"
-        class="bg-gradient-to-br from-phx-1 via-phx-2 to-phx-3 text-white rounded-full px-2 font-medium leading-6 transition-all duration-400 hover:scale-110 ease-in-out"
-      >
-        v<%= Application.spec(:phoenix, :vsn) %>
-      </a>
+      <.badge class=" leading-6 ">
+        <a href="https://hexdocs.pm/phoenix/1.7.3/overview.html" target="_blank">
+          v<%= Application.spec(:phoenix, :vsn) %>
+        </a>
+      </.badge>
     </div>
     <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-
-      <.phxlink href="https://github.com/enesflow" class="hover:text-zinc-700" target="_blank">
-        @enesflow
-      </.phxlink>
+      <.phxbutton>
+        Useless Button
+      </.phxbutton>
+      <.badge>
+        <a href="https://github.com/enesflow" class="" target="_blank">
+          @enesflow
+        </a>
+      </.badge>
       <.phxlink href="https://hexdocs.pm/phoenix/overview.html" target="_blank">
-      Get Started <span aria-hidden="true">&rarr;</span>
+        Get Started <span aria-hidden="true">&rarr;</span>
       </.phxlink>
     </div>
   </div>

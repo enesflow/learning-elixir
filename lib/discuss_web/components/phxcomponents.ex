@@ -14,7 +14,7 @@ defmodule DiscussWeb.PhxComponents do
     <button
       type={@type}
       class={[
-        "relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group/button rounded-3xl",
+        "relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group/button rounded-3xl active:shadow-md active:scale-95 active:ring-2 active:ring-offset-2 active:ring-phx-2 transition-all duration-200",
         @class
       ]}
       {@rest}
@@ -78,6 +78,25 @@ defmodule DiscussWeb.PhxComponents do
         class="bg-gradient-to-br from-phx-1 via-phx-2 to-phx-3 h-3 w-3 line-height-0 text-transparent"
       /> <%= render_slot(@inner_block) %>
     </.phxlink>
+    """
+  end
+
+  attr(:class, :string, default: nil)
+  attr(:rest, :global, include: ~w(disabled form name value))
+
+  slot(:inner_block, required: true)
+
+  def badge(assigns) do
+    ~H"""
+    <span
+      class={[
+        "bg-gradient-to-br from-phx-1 via-phx-2 to-phx-3 text-white rounded-full px-2 font-medium transition-all duration-400 hover:scale-110 ease-in-out",
+        @class
+      ]}
+      {@rest}
+    >
+      <%= render_slot(@inner_block) %>
+    </span>
     """
   end
 end
