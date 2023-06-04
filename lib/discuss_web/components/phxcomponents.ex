@@ -90,7 +90,7 @@ defmodule DiscussWeb.PhxComponents do
     ~H"""
     <span
       class={[
-        "bg-gradient-to-br from-phx-1 via-phx-2 to-phx-3 text-white rounded-full px-2 font-medium transition-all duration-400 hover:scale-110 ease-in-out",
+        "leading-6 bg-gradient-to-br from-phx-1 via-phx-2 to-phx-3 text-white rounded-full px-2 font-medium transition-all duration-400 hover:scale-110 ease-in-out",
         @class
       ]}
       {@rest}

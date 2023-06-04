@@ -9,24 +9,31 @@
           class="rounded-xl hover:scale-110 transition-all duration-400 ease-in-out"
         />
       </a>
-      <.badge class=" leading-6 ">
+      <.badge>
+        <a href="https://github.com/enesflow" target="_blank">
+          @enesflow
+        </a>
+      </.badge>
+      <.badge>
         <a href="https://hexdocs.pm/phoenix/1.7.3/overview.html" target="_blank">
           v<%= Application.spec(:phoenix, :vsn) %>
         </a>
       </.badge>
     </div>
     <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <.phxbutton>
-        Useless Button
-      </.phxbutton>
-      <.badge>
-        <a href="https://github.com/enesflow" class="" target="_blank">
-          @enesflow
-        </a>
-      </.badge>
-      <.phxlink href="https://hexdocs.pm/phoenix/overview.html" target="_blank">
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </.phxlink>
+      <%= if @conn.assigns[:user] do %>
+        <.link navigate="/auth/signout">
+          <.phxbutton>
+            Sign Out
+          </.phxbutton>
+        </.link>
+      <% else %>
+        <.link navigate="/auth/github">
+          <.phxbutton>
+            Sign In with GitHub
+          </.phxbutton>
+        </.link>
+      <% end %>
     </div>
   </div>
 </header>
