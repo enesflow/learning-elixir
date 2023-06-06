@@ -22,13 +22,13 @@
     </div>
     <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
       <%= if @conn.assigns[:user] do %>
-        <.link navigate="/auth/signout">
+        <.link navigate={~p"/auth/signout"}>
           <.phxbutton>
             Sign Out
           </.phxbutton>
         </.link>
       <% else %>
-        <.link navigate="/auth/github">
+        <.link navigate={~p"/auth/github"}>
           <.phxbutton>
             Sign In with GitHub
           </.phxbutton>

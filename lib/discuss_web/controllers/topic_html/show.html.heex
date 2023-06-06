@@ -2,12 +2,14 @@
   Topic <%= @topic.id %>
   <:subtitle>This is a topic record from your database.</:subtitle>
   <:actions>
-    <.link href={~p"/topics/#{@topic}/edit"}>
-      <.phxbutton>Edit topic</.phxbutton>
-    </.link>
-    <.link href={~p"/topics/#{@topic}"} method="delete" data-confirm="Are you sure?">
-      <.phxbutton>Delete topic</.phxbutton>
-    </.link>
+    <%= if @conn.assigns[:user] && @conn.assigns.user.id == @topic.user_id do %>
+      <.link href={~p"/topics/#{@topic}/edit"}>
+        <.phxbutton>Edit topic</.phxbutton>
+      </.link>
+      <.link href={~p"/topics/#{@topic}"} method="delete" data-confirm="Are you sure?">
+        <.phxbutton>Delete topic</.phxbutton>
+      </.link>
+    <% end %>
   </:actions>
 </.header>
 
