@@ -67,7 +67,7 @@ config :ueberauth, Ueberauth,
   providers: [
     github: {Ueberauth.Strategy.Github, [default_scope: "user:email"]}
   ]
-
+# I revoked these, don't get excited
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: "11d4aa38d7ca549178fb",
   client_secret: "c41200b6f70549d9556672f6f8107c0ef7343722"
